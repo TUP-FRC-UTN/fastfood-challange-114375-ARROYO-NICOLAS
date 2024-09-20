@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Componente Point of Sell</h1>
+
+    <form #form="ngForm" (ngSubmit)="sendForm(form)">
+
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input  
+                type="text" 
+                class="form-control" 
+                id="nombre" 
+                name="nombre" 
+                [(ngModel)]="pedido.name" 
+                required
+                #name="ngModel"
+            >
+        </div>
+
+        <div class="form-group">
+
+            <label for="descripcion"> Pedido:</label>
+            <input  
+                class="form-control" 
+                type="text" 
+                id="descripcion" 
+                name="descripcion" 
+                [(ngModel)]="pedido.description" 
+                required
+                #description="ngModel"
+            >
+            
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
