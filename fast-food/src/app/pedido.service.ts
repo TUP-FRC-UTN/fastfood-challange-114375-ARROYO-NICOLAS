@@ -8,20 +8,49 @@ export class PedidoService {
 
   private lstPedidosPendientes: Pedido[] = [];
   private lstPedidosCocinandose: Pedido[] = [];
-  private lstPedidosEntregados: Pedido[] = [];
+  private lstPedidosTerminados: Pedido[] = [];
 
 
-  addPush(P: Pedido) {
+  addPushPendientes(P: Pedido) {
     this.lstPedidosPendientes.push(P);
-    console.log(this.lstPedidosPendientes)
   };
 
-  getPedidos() {
+  getPedidosPendientes() {
     return this.lstPedidosPendientes;
   }
 
-  delete(index: number){
+  deletePendientes(index: number){
     this.lstPedidosPendientes.splice(index, 1);
   }
+
+
+  
+  getPedidosCocinandose() {
+    return this.lstPedidosCocinandose;
+  }
+
+  addPushCocinandose(P: Pedido) {
+    this.lstPedidosCocinandose.push(P);
+  };
+
+  deleteCocinandose(index: number){
+    this.lstPedidosCocinandose.splice(index, 1);
+  }
+
+
+
+  addPushTerminados(P: Pedido) {
+    this.lstPedidosTerminados.push(P);
+  };
+
+  deleteTerminados(index: number){
+    this.lstPedidosTerminados.splice(index, 1);
+  }
+
+  getPedidosTerminados() {
+    return this.lstPedidosTerminados;
+  }
+
+  
   
 }

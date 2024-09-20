@@ -1,1 +1,15 @@
-<p>delivery-point works!</p>
+<table class="table">
+    <thead>
+    </thead>
+    <tbody>
+        @for(pedido of lstPedidosTerminados; track $index){
+            <tr>
+                <th scope="row">{{$index}}</th>
+                <td>{{pedido.number}}</td>
+                <td>{{pedido.name}}</td>
+                <td>{{pedido.description}}</td>
+                <td><button type="button" class="btn" (click)="entregar($index)">Entregar</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

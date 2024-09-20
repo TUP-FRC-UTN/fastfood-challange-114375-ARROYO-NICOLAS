@@ -17,13 +17,15 @@ export class RestaurantComponent {
 
   private pedidoService = inject(PedidoService)
 
-  lstPedidos: Pedido[] = [];
-
-  getPedidos() {
-    this.lstPedidos = this.pedidoService.getPedidos();
-  }
+  lstPedidosPendientes: Pedido[] = [];
+  
 
   ngOnInit() {
-    this.getPedidos();
+    this.getPedidosPendientes();
   }
+
+  getPedidosPendientes() {
+    this.lstPedidosPendientes = this.pedidoService.getPedidosPendientes();
+  }
+
 }

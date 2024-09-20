@@ -19,7 +19,7 @@ export class PointOfShellComponent {
 
   sendForm(form: NgForm) {
     if (form.valid) {
-      this.pedidoService.addPush(this.pedido);
+      this.pedidoService.addPushPendientes(this.pedido);
       this.pedido = new Pedido();
       console.log(this.pedido);
     }

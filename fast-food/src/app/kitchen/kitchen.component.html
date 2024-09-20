@@ -1,1 +1,35 @@
-<p>kitchen works!</p>
+<div class="container">
+
+    <h4>Pendientes de Cocinar</h4>
+    <table class="table">
+        <thead>
+        </thead>
+        <tbody>
+            @for(pedido of lstPedidosPendientes; track $index){
+                <tr>
+                    <th scope="row">{{$index}}</th>
+                    <td>{{pedido.number}}</td>
+                    <td>{{pedido.name}}</td>
+                    <td>{{pedido.description}}</td>
+                    <td><button type="button" class="btn" (click)="cocinar($index)">Cocinar</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <h4>Pedidos en coccion</h4>
+    <table class="table">
+        <thead>
+        </thead>
+        <tbody>
+            @for(pedido of lstPedidosCocinandose; track $index){
+                <tr>
+                    <th scope="row">{{$index}}</th>
+                    <td>{{pedido.number}}</td>
+                    <td>{{pedido.name}}</td>
+                    <td>{{pedido.description}}</td>
+                    <td><button type="button" class="btn" (click)="terminar($index)">Terminar</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
